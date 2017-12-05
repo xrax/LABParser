@@ -10,6 +10,7 @@
 		FA4CDCB41FD73A2200685B87 /* LABParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4CDCAA1FD73A2200685B87 /* LABParser.framework */; };
 		FA4CDCB91FD73A2200685B87 /* LABParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CDCB81FD73A2200685B87 /* LABParserTests.swift */; };
 		FA4CDCBB1FD73A2200685B87 /* LABParser.h in Headers */ = {isa = PBXBuildFile; fileRef = FA4CDCAD1FD73A2200685B87 /* LABParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA4CDCC51FD73AF200685B87 /* LABParcelableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CDCC41FD73AF200685B87 /* LABParcelableModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		FA4CDCB31FD73A2200685B87 /* LABParserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LABParserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA4CDCB81FD73A2200685B87 /* LABParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LABParserTests.swift; sourceTree = "<group>"; };
 		FA4CDCBA1FD73A2200685B87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA4CDCC41FD73AF200685B87 /* LABParcelableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LABParcelableModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				FA4CDCAD1FD73A2200685B87 /* LABParser.h */,
 				FA4CDCAE1FD73A2200685B87 /* Info.plist */,
+				FA4CDCC41FD73AF200685B87 /* LABParcelableModel.swift */,
 			);
 			path = LABParser;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					FA4CDCA91FD73A2200685B87 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					FA4CDCB21FD73A2200685B87 = {
@@ -196,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4CDCC51FD73AF200685B87 /* LABParcelableModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +339,7 @@
 		FA4CDCBF1FD73A2200685B87 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -347,6 +353,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lab.pods.LABParser;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -355,6 +362,7 @@
 		FA4CDCC01FD73A2200685B87 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -376,6 +384,7 @@
 		FA4CDCC21FD73A2200685B87 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62JAEBE232;
 				INFOPLIST_FILE = LABParserTests/Info.plist;
@@ -390,6 +399,7 @@
 		FA4CDCC31FD73A2200685B87 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62JAEBE232;
 				INFOPLIST_FILE = LABParserTests/Info.plist;
