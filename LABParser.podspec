@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'LABParser'
-  s.version          = '1.0'
+  s.version          = '0.1'
   s.summary          = 'Simple JSON-Dictionary parser.'
   s.description      = "Bidirectional JSON-Dictionary parser development in swift 4."
 
