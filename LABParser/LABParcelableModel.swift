@@ -48,7 +48,7 @@ open class ParcelableModel: NSObject {
         return anyClass as! ParcelableModel.Type
     }
     
-    public func customKeysName() -> [String : String]? {
+    open func customKeysName() -> [String : String]? {
         return nil
     }
     
@@ -148,7 +148,7 @@ open class ParcelableModel: NSObject {
         }
     }
     
-    public class func fromJsonArray<T : ParcelableModel>(_ array: [[String: AnyObject]]) -> [T] {
+    public class func fromDictionaryArray<T : ParcelableModel>(_ array: [[String: AnyObject]]) -> [T] {
         var arrayObjects = [T]()
         
         for item in array {
@@ -160,6 +160,11 @@ open class ParcelableModel: NSObject {
         return arrayObjects
     }
     
+    // Under construction
+    // public class func fromJSONArray<T: ParcelableModel>(_ array: String) {
+
+    // }
+
     // MARK: To
     /**
      Transform the current NSObject to JSON.

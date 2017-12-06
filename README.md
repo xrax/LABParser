@@ -39,7 +39,7 @@ platform :ios, '11.0'
 use_frameworks!
 
 target 'MyProject' do
- pod 'LABParser', '~> 0.1'
+ pod 'LABParser', '~> 0.2'
 end
 ```
 
