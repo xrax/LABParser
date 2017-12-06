@@ -1,4 +1,3 @@
-
 Pod::Spec.new do |s|
   s.name             = 'LABParser'
   s.version          = '0.1'
