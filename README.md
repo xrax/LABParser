@@ -4,7 +4,7 @@
 Bidirectional JSON-Dictionary/Object parser development in swift 4.
 
 <p align="center">
-    <a href="#requirements">Requirements</a> • <a href="#installation">Installation</a> • <a href="#usage">Usage</a> • <a href="#contribution">Contribution</a> • <a href="#contact">Contact</a> • <a href="#license-mit">License</a>
+    <a href="#requirements">Requirements</a> • <a href="#installation">Installation</a> • <a href="#usage">Usage</a> • <a href="#contribution">Contribution</a> • <a href="#author">Author</a> • <a href="#license-mit">License</a>
 </p>
 
 ## Requirements
@@ -23,6 +23,12 @@ Install CocoaPods if it is not already available:
 $ [sudo] gem install cocoapods
 $ pod setup
 ```
+
+If you already have cocoapods, update it:
+``` bash
+$ pod update
+```
+
 Go to the directory of your Xcode project, and Create and Edit your Podfile and add _LabParser_:
 
 ``` bash
@@ -57,7 +63,7 @@ LABParser is a bidirectional JSON-Dictionary/Object parser development in swfit 
 
 In order to usage this pod, you need import LABParser into yours model objects. 
 
-LABParser act through a class named ParcelableModel. You must inherits all you models of this class to use properly LABParser. We encourage you to create a BaseModel class to import LABParser only in it. This BaseModel class must be open to allow inherits.
+LABParser act through a class named ParcelableModel. You must inherits all your models of this class to use properly LABParser. We encourage you to create a BaseModel class to import LABParser only in it. This BaseModel class must be open to allow inherits.
 
 ```
 import Foundation
@@ -159,6 +165,7 @@ do {
 
 ## To Consider
 - All yours models must inherits from ParcelableModel. To import only in a class, you can create a BaseModel to it and all yours models inherits from BaseModel.
+- Your atributtes models must be exactly the same of the JSON/Dictionary key name or you must override the function 'customKeysName' in your model class.
 - If you have properties of type Int, Float or Double then you must change these types to NSNumber.
 - If you have properties of type Bool, you must initialize these in their declaration. You can convert it to NSNumber too.
 - LABParser can parser atributes of ParcelableModel objects type like:
@@ -169,7 +176,7 @@ class Token: BaseModel {
 
 	var defaultToken: String!
 	var attempts: NSNumber?
-	var refreshToken: Token!
+	var refreshToken: String!
 
 	required init(){
 		super.init()
@@ -188,12 +195,6 @@ class User: BaseModel {
 
 	required init(){
 		super.init()
-	}
-
-	init(email: String, password: String) {
-		super.init()
-		self.email = email
-		self.password = password
 	}
 }
 ```
@@ -214,10 +215,39 @@ class User: BaseModel {
 	]
 }
 ```
+With a propertly model:
+```
+import Foundation
+
+class Office: BaseModel {
+
+	var name: String!
+	var address: String!
+
+	required init(){
+		super.init()
+	}
+}
+```
+
+```
+import Foundation
+
+class User: BaseModel {
+
+	var email: String!
+	var password: String!
+	var offices: [Office]!
+
+	required init(){
+		super.init()
+	}
+}
+```
 
 ## Contribution
 
-This library has created based on ParceSwift library. If need a parser in Swift 1,2 or 3, go to https://github.com/sebastian989/ParceSwift.
+This library has created based on ParceSwift library. If you need a parser in Swift 1, 2 or 3, go to https://github.com/sebastian989/ParceSwift.
 All contributions are welcome. Just contact us.
 
 ## Author 
